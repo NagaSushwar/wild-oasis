@@ -8,7 +8,7 @@ import SubmitButton from "./SubmitButton";
 
 export default function UpdateProfileForm({ children, guest }) {
   const [count, isCount] = useState();
-  const { fullName, email, nationality, nationalID, countryFlag } = guest;
+  const { fullName, email, nationalID, countryFlag } = guest;
 
   return (
     <form
@@ -39,7 +39,7 @@ export default function UpdateProfileForm({ children, guest }) {
         <div className="flex items-center justify-between">
           <label htmlFor="nationality">Where are you from?</label>
           <Image
-            src={countryFlag}
+            src={guest?.countryFlag ?? "https://flagcdn.com/aw.svg"}
             alt="Country flag"
             height={50}
             width={50}
@@ -53,7 +53,7 @@ export default function UpdateProfileForm({ children, guest }) {
         <label htmlFor="nationalID">National ID number</label>
         <input
           name="nationalID"
-          // defaultValue={nationalID === null ? "INDIan" : nationalID}
+          defaultValue={guest?.nationalID ?? "hbifgbdfkdfkjbdkvbwfbo"}
           className="px-5 py-3 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm"
         />
       </div>

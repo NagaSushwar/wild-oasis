@@ -32,6 +32,8 @@ const authConfig = {
   pages: {
     signIn: "/login",
   },
+  secret: process.env.NEXTAUTH_SECRET,
+  trustHost: true,
 };
 
 export const {
